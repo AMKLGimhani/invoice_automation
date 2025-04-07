@@ -20,7 +20,7 @@
       <x:String>UiPath.PDF.Activities</x:String>
     </scg:List>ggjghjgjgjgjgjgjgjgjjjgj
   </TextExpression.NamespacesForImplementation>
-  <Sequence DisplayName="Invoice PDF Data Extraction">
+  <Sequence DisplayName="Invoice Data Extraction - PDF">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pdfSourceDirectory" />
       <Variable x:TypeArguments="x:String" Name="csvOutputPath" />
