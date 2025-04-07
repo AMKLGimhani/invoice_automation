@@ -55,6 +55,6 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Process End" Level="Info" Message="PDF invoice extraction process completed" />
+    <ui:LogMessage DisplayName="Log Process End" Level="Info" Message="PDF invoice extraction process done" />
   </Sequence>
 </Activity>
