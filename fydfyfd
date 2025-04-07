@@ -1,0 +1,41 @@
+<Activity x:Class="CreateInvoiceSchema"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ mc:Ignorable="d">
+  
+  <Sequence DisplayName="Create MySQL Schema">
+    <ui:InvokeCode DisplayName="Generate MySQL Invoice Schema" Language="VB">
+      <ui:InvokeCode.Code>
+        <![CDATA[
+Dim schema As String = "
+CREATE DATABASE IF NOT EXISTS InvoiceDB;
+
+USE InvoiceDB;
+
+CREATE TABLE IF NOT EXISTS Invoices (
+    InvoiceID INT AUTO_INCREMENT PRIMARY KEY,
+    InvoiceNumber VARCHAR(50) NOT NULL,
+    InvoiceDate DATE NOT NULL,
+    CustomerName VARCHAR(100),
+    TotalAmount DECIMAL(10,2)
+);
+
+CREATE TABLE IF NOT EXISTS LineItems (
+    LineItemID INT AUTO_INCREMENT PRIMARY KEY,
+    InvoiceID INT,
+    Description VARCHAR(255),
+    Quantity INT,
+    UnitPrice DECIMAL(10,2),
+    FOREIGN KEY (InvoiceID) REFERENCES Invoices(InvoiceID)
+);
+"
+
+System.IO.File.WriteAllText("C:\\temp\\create_invoice_schema.sql", schema)
+        ]]>
+      </ui:InvokeCode.Code>
+    </ui:InvokeCode>
+  </Sequence>
+</Activity>
