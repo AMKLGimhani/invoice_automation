@@ -18,7 +18,7 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>UiPath.PDF.Activities</x:String>
-    </scg:List>ggjghjgjgjgjgjgjgjgjjjgj
+    </scg:List>ggjghjgjgjgjgjgjgjgjjjgjghhfretddteegfgrdffg
   </TextExpression.NamespacesForImplementation>
   <Sequence DisplayName="Invoice Data Extraction - PDF">
     <Sequence.Variables>
