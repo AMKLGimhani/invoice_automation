@@ -4,11 +4,11 @@
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
  xmlns:ui="http://schemas.uipath.com/workflow/activities"
- mc:Ignorable="d">
+ mc:Ignorable="d">   
   
   <Sequence DisplayName="Create MySQL Schema">
     <ui:InvokeCode DisplayName="Generate MySQL Invoice Schema" Language="VB">
-      <ui:InvokeCode.Code>
+      <ui:InvokeCode.Code> 
         <![CDATA[
 Dim schema As String = "
 CREATE DATABASE IF NOT EXISTS InvoiceDB;
